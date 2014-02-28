@@ -48,11 +48,7 @@ RUN chown -R www-data:www-data /usr/share/nginx/www
 ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 
-#add repartition charge
-ADD index.js /src/
-
 # private expose
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["/bin/bash", "/start.sh"]
-CMD ["node", "/src/index.js"]
